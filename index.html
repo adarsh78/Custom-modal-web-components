@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Modal</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">A Web Components Open Book Project</h1>
+    <br>
+    <br>
+    <button 
+    style="width: 5rem; cursor: pointer; display: flex;"
+    class="open">Open</button>
+    <x-modal title="Important!" visible>
+      <p>Do you want to proceed?</p>
+    </x-modal>
+
+    <script>
+        modal = document.querySelector("x-modal");
+        modal.addEventListener("cancel", function() {
+          console.log("cancel event raised");
+        });
+        modal.addEventListener("ok", function() {
+          console.log("ok event raised");
+        });
+      
+        open = document.querySelector(".open");
+        open.addEventListener("click", function() {
+          modal.visible = true;
+        });
+      </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
